@@ -1,0 +1,53 @@
+body
+{
+	background: #F2F2F2;
+	font-size: 16px;
+}
+
+header
+{
+	background: #515A91;
+	box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+	overflow: hidden;
+	padding: 0em 0 1em 0em;
+	text-align: center;
+	top: 0;
+}
+aside
+{
+	background: -webkit-linear-gradient(top, rgba(143,200,0,1) 0%,rgba(143,200,0,1) 100%); 
+	border-radius: 0 0 0.5em 0.5em;
+	box-shadow: rgba(0,0,0,0.5) 0px 5px 20px;
+	color: #F2F2F2;
+	padding: 1em 2em 1em 3em;
+	position: relative;
+	top: 0;
+	text-align: center;
+}
+strong
+{
+	text-decoration: underline;
+}
+#botonEmpieza
+{
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(50%,#d2e638), color-stop(51%,#c3d825), color-stop(100%,#dbf043));
+	border: 1px solid #fff;
+	color: white;
+	font-style: italic;
+	font-weight: bold;
+	margin: 0.1em 0 0.1em 0;
+	padding: 1em 3em 1em 3em;
+	text-shadow:rgba(0,0,0,0.5) 0px 2px 3px;
+	width: 100%;
+	}
+#logo
+{
+	border: 3px solid #F2F2F2;
+	border-radius: 2em;
+	width: 20%;
+}
+.texto
+{
+	color: #F2F2F2;
+	text-shadow:rgba(0,0,0,0.5) 0px 2px 3px;
+}
