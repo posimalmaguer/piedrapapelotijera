@@ -1,6 +1,6 @@
 body
 {
-	background: #F2F2F2;
+	background: #2a2b27;
 	font-size: 16px;
 }
 
@@ -15,7 +15,7 @@ header
 }
 aside
 {
-	background: -webkit-linear-gradient(top, rgba(143,200,0,1) 0%,rgba(143,200,0,1) 100%); 
+	background: -webkit-linear-gradient(top, rgba(143,200,0,1) 0%,rgba(143,200,0,1) 100%);
 	border-radius: 0 0 0.5em 0.5em;
 	box-shadow: rgba(0,0,0,0.5) 0px 5px 20px;
 	color: #F2F2F2;

@@ -4,148 +4,152 @@ function aleatorio(minimo, maximo)
 	return numero;
 }
 
-var piedra = 0;
 
-var papel = 1;
+var opciones = ["piedra", "papel", "tijera","lagarto", "spock"];
 
-var tijera = 2;
-
-var lagarto = 3;
-
-var spock = 4;
-
-var opciones = ["Piedra", "papel", "tijera","lagarto", "spock"];
-
-var opcionUsuario;
-
-var opcionMaquina = aleatorio(0,4); 
+var opcionMaquina = aleatorio(0,4);
 
 function empieza (opcionUsuario) {
 
-opcionUsuario = prompt("¿Qué eliges?\nPiedra: 0\nPapel: 1\nTijera: 2\nLagarto: 3\nSpock: 4", 0);
+	var opcionUsuario = prompt("¿Qué eliges?\nPiedra: 0\nPapel: 1\nTijera: 2\nLagarto: 3\nSpock: 4", 0);
 
-alert("elegiste: " + opciones[opcionUsuario]);
-alert("Javascript eligió: " + opciones[opcionMaquina]);
+	// Se valida que el usuario no capture caracteres
+	if( !isNaN(parseInt(opcionUsuario)  ) ){
+		// Se toma el valor capturado por el usuario, para compararlo contra el valor que regresa la maquina
+		if(parseInt(opcionUsuario) <= 4){
+			alert("elegiste: " + opciones[opcionUsuario]);
+			alert("Javascript eligió: " + opciones[opcionMaquina]);
 
-if(opcionUsuario == piedra)
-{
-
-	if(opcionMaquina == papel)
-	{
-		alert("Perdiste!")
+			switch( opciones[opcionUsuario] ){
+				case "tijera":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "piedra":{
+							alert("Pierdes...");
+						}
+						break;
+						case "lagarto":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "papel":{
+					switch( opciones[opcionMaquina] ){
+						case "tijera":{
+							alert("Pierdes...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Pierdes...");
+						}
+						break;
+						case "spock":{
+							alert("Ganaste...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "piedra":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Pierdes...");
+						}
+						break;
+						case "tijera":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "lagarto":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "tijera":{
+							alert("Pierdes...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Ganaste...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				default:{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "tijera":{
+							alert("Ganaste...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+			}
+		}
+		else{
+			// Si se elige una opción no valida, se manda msj
+			alert("Opción no valida...Verifique!!!");
+		}
 	}
-	if(opcionMaquina == tijera)
-	{
-		alert("ganaste!");
+	else{
+		alert("¿Qué es eso?\n\nSolo se permiten:\nPiedra: 0\nPapel: 1\nTijera: 2\nLagarto: 3\nSpock: 4")
 	}
-	if(opcionMaquina == piedra)
 
-		alert("Empate!");
-	
-	if(opcionMaquina == lagarto)
-
-		alert("Ganaste!");
-	
-	if(opcionMaquina == spock)
-
-		alert("Perdiste");
-
-} 
-else if(opcionUsuario == papel)
-{
-	
-	if(opcionMaquina == papel)
-	{
-		alert("Empate!")
-	}
-	if(opcionMaquina == tijera)
-	{
-		alert("Perdiste!");
-	}
-	if(opcionMaquina == piedra)
-
-		alert("Ganaste!");
-
-	if(opcionMaquina == lagarto)
-
-		alert("Perdiste!");
-
-	if(opcionMaquina == spock)
-
-		alert("Ganaste!");
-}
-else if(opcionUsuario == tijera)
-{
-
-	if(opcionMaquina == papel)
-	{
-		alert("Ganaste!")
-	}
-	if(opcionMaquina == tijera)
-	{
-		alert("Es un empate!");
-	}
-	if(opcionMaquina == piedra)
-
-		alert("Perdiste!");
-
-	if(opcionMaquina == lagarto)
-
-		alert("Ganaste!");
-
-	if(opcionMaquina == spock)
-
-		alert("Perdiste!");
-}
-else if(opcionUsuario == lagarto)
-{
-
-	if(opcionMaquina == papel)
-	{
-		alert("Ganaste!")
-	}
-	if(opcionMaquina == tijera)
-	{
-		alert("Perdiste!");
-	}
-	if(opcionMaquina == piedra)
-
-		alert("Perdiste!");
-
-	if(opcionMaquina == lagarto)
-
-		alert("Empate!");
-
-	if(opcionMaquina == spock)
-
-		alert("Ganaste!");
-}
-else if(opcionUsuario == spock)
-{
-
-	if(opcionMaquina == papel)
-	{
-		alert("Perdiste!")
-	}
-	if(opcionMaquina == tijera)
-	{
-		alert("Ganaste!");
-	}
-	if(opcionMaquina == piedra)
-
-		alert("Ganaste!");
-
-	if(opcionMaquina == lagarto)
-
-		alert("Perdiste!");
-
-	if(opcionMaquina == spock)
-
-		alert("Empate!");
-}
-else if (opcionUsuario >= 5)
-{
-
-	alert("WTF????");
-}
 }
