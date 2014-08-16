@@ -4,25 +4,14 @@ function aleatorio(minimo, maximo)
 	return numero;
 }
 
-var piedra = 0;
 
-var papel = 1;
-
-var tijera = 2;
-
-var lagarto = 3;
-
-var spock = 4;
-
-var opciones = ["Piedra", "papel", "tijera","lagarto", "spock"];
-
-var opcionUsuario;
+var opciones = ["piedra", "papel", "tijera","lagarto", "spock"];
 
 var opcionMaquina = aleatorio(0,4);
 
 function empieza (opcionUsuario) {
 
-	opcionUsuario = prompt("¿Qué eliges?\nPiedra: 0\nPapel: 1\nTijera: 2\nLagarto: 3\nSpock: 4", 0);
+	var opcionUsuario = prompt("¿Qué eliges?\nPiedra: 0\nPapel: 1\nTijera: 2\nLagarto: 3\nSpock: 4", 0);
 
 	// Se valida que el usuario no capture caracteres
 	if( !isNaN(parseInt(opcionUsuario)  ) ){
@@ -31,18 +20,131 @@ function empieza (opcionUsuario) {
 			alert("elegiste: " + opciones[opcionUsuario]);
 			alert("Javascript eligió: " + opciones[opcionMaquina]);
 
-			if ( opcionUsuario > opcionMaquina ){
-				alert("Ganaste");
-			}
-			else if( opcionUsuario < opcionMaquina){
-				alert("Perdiste");
-			}
-			else{
-				alert("Empate");
+			switch( opciones[opcionUsuario] ){
+				case "tijera":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "piedra":{
+							alert("Pierdes...");
+						}
+						break;
+						case "lagarto":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "papel":{
+					switch( opciones[opcionMaquina] ){
+						case "tijera":{
+							alert("Pierdes...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Pierdes...");
+						}
+						break;
+						case "spock":{
+							alert("Ganaste...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "piedra":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Pierdes...");
+						}
+						break;
+						case "tijera":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				case "lagarto":{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "tijera":{
+							alert("Pierdes...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "spock":{
+							alert("Ganaste...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
+				default:{
+					switch( opciones[opcionMaquina] ){
+						case "papel":{
+							alert("Ganaste...");
+						}
+						break;
+						case "tijera":{
+							alert("Ganaste...");
+						}
+						break;
+						case "piedra":{
+							alert("Ganaste...");
+						}
+						break;
+						case "lagarto":{
+							alert("Pierdes...");
+						}
+						break;
+						default:{
+							alert("Empate...");
+						}
+						break;
+					}
+				}break;
 			}
 		}
 		else{
-			// Si se elige una opción no valida, se
+			// Si se elige una opción no valida, se manda msj
 			alert("Opción no valida...Verifique!!!");
 		}
 	}
